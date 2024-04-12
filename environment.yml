@@ -1,8 +1,15 @@
 name: predict_drinking_water_potability
 channels:
   - conda-forge
+  - pytorch
 dependencies:
   - python=3.11
   - pandas
   - kaggle
   - requests
+  - matplotlib
+  - seaborn
+  - jupyter
+  - ipykernel
+  - ipywidgets
+  - imblearn
