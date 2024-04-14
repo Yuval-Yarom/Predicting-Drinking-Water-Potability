@@ -1,1 +1,2 @@
 DATASETS_FOLDER_PATH = '../Data'
+CLASSIFIERS_COLUMN = 'Potability'

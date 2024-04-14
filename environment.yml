@@ -12,4 +12,4 @@ dependencies:
   - jupyter
   - ipykernel
   - ipywidgets
-  - imblearn
+  - imbalanced-learn
