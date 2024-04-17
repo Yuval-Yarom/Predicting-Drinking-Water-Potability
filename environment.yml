@@ -13,3 +13,6 @@ dependencies:
   - ipykernel
   - ipywidgets
   - imblearn
+  - numba
+  - distinctipy
+  - pyarrow
