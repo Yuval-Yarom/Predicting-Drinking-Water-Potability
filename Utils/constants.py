@@ -1,2 +1,3 @@
 DATASETS_FOLDER_PATH = '../Data'
+DATA_PREPROCESSED_FOLDER_PATH = '../DataPreprocessed'
 CLASSIFIERS_COLUMN = 'Potability'

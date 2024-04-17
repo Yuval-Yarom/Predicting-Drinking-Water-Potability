@@ -7,7 +7,7 @@ from matplotlib import pyplot
 from imblearn.over_sampling import SMOTE
 import seaborn as sns
 
-from Utils.constants import DATASETS_FOLDER_PATH
+from Utils.constants import DATASETS_FOLDER_PATH, DATA_PREPROCESSED_FOLDER_PATH
 
 def load_data_from_folder() -> pd.DataFrame:
     files = os.listdir(DATASETS_FOLDER_PATH)
@@ -69,3 +69,34 @@ def get_violinplot(df: pd.DataFrame) -> None:
         axs[i].set_title(column)
     plt.tight_layout()
     plt.show()
+
+# Functions after data preprocessing stage
+def load_preprocessed_data_from_folder() -> pd.DataFrame:
+    # Specify the folder path where the preprocessed data files are located
+    folder_path = DATA_PREPROCESSED_FOLDER_PATH
+    # Check if the folder exists
+    if not os.path.exists(folder_path):
+        raise FileNotFoundError(f"The folder '{folder_path}' does not exist.")
+    # List all files in the folder
+    files = os.listdir(folder_path)
+    # Filter out only the 'preprocessed_data.csv' file
+    preprocessed_data_file = "preprocessed_data.csv"
+    if preprocessed_data_file not in files:
+        raise FileNotFoundError(f"The file '{preprocessed_data_file}' does not exist in the folder.")
+    # Load the 'preprocessed_data.csv' file into a pandas DataFrame
+    file_path = os.path.join(folder_path, preprocessed_data_file)
+    df = pd.read_csv(file_path)
+    return df
+
+def save_preprocessed_data_to_folder(data: pd.DataFrame) -> None:
+    # Check if the specified folder exists
+    if not os.path.exists(DATA_PREPROCESSED_FOLDER_PATH):
+        os.makedirs(DATA_PREPROCESSED_FOLDER_PATH)  # Create the folder if it doesn't exist
+
+    # Specify the file path for saving the preprocessed data
+    file_path = os.path.join(DATA_PREPROCESSED_FOLDER_PATH, "preprocessed_data.csv")
+
+    # Save the DataFrame to a CSV file
+    data.to_csv(file_path, index=False, mode='w')  # Set index=False to exclude row indices from the CSV file
+
+
