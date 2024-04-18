@@ -15,11 +15,7 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 # Optimization
 
-# Auxiliary
-from numba import jit, njit
-
 # Visualization
-import distinctipy
 import matplotlib.colors
 import matplotlib.pyplot as plt
 

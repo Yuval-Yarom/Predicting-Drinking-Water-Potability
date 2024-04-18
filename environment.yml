@@ -12,7 +12,7 @@ dependencies:
   - jupyter
   - ipykernel
   - ipywidgets
-  - imblearn
   - numba
   - distinctipy
   - pyarrow
+  - imbalanced-learn
