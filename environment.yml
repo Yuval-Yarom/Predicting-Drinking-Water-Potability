@@ -16,3 +16,4 @@ dependencies:
   - distinctipy
   - pyarrow
   - imbalanced-learn
+  - optuna
